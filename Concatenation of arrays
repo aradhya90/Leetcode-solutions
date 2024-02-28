@@ -1,14 +1,21 @@
-class solution{
-    public:
-    vector<int> getconcatenation(vector<int>& nums){
-        int len=nums.size();
-        vector<int>ans(2*len,0);
-        for(int i=0;i<len;i++){
-            ans[i]=nums[i];
+#include <vector>
+
+class Solution {
+public:
+    std::vector<int> getConcatenation(std::vector<int>& nums) {
+        int len = nums.size();
+        std::vector<int> ans(2 * len, 0);
+
+        // Copy the elements from nums to ans
+        for (int i = 0; i < len; i++) {
+            ans[i] = nums[i];
         }
-        for(int i=0;i<len;i++){
-            ans[i+1]=nums[i];
+
+        // Copy the elements from nums to ans again (starting from index len)
+        for (int i = 0; i < len; i++) {
+            ans[i + len] = nums[i];
         }
+
         return ans;
     }
-}
+};
