@@ -1,0 +1,26 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+bool test(vector<int>nums){
+    sort(nums.begin(),nums.end());
+     
+     for(int i=0;i<nums.size();i++){
+       if (nums[i + 1] != (nums[i] + 1))
+       return false;
+     }
+     return true;
+
+}
+int main() {
+    // Declaring a vector of integers and initializing it with values
+    // Uncomment either of the following lines to test different sets of numbers
+
+    // vector<int> nums = {1, 2 ,5, 7, 4, 3, 6}; // Test vector with non-consecutive numbers
+    vector<int> nums = {1, 2 ,5, 0, 3, 6, 7}; // Test vector with consecutive numbers
+
+    // Printing the elements of the vector
+    for (int x : nums)
+        cout << x << " ";
+    cout << "\nCheck consecutive numbers in the said vector! " << test(nums) << endl; // Calling the test function to check if elements are consecutive and displaying the result
+}
