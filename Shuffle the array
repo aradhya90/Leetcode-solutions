@@ -1,0 +1,16 @@
+class Solution {
+public:
+    vector<int> shuffle(vector<int>& nums, int n){
+        vector<int>ok;
+        int p=n;
+        int j=0;
+        while(p<2*n){
+            ok.push_back(nums[j]);
+            j++;
+            ok.push_back(nums[p]);
+            p++;
+        }
+        return ok;
+        
+    }
+};
